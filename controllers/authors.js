@@ -5,11 +5,10 @@ const authors = {
     try {
       req.body.user_id = "64496465077201479936117f";
       req.body.active = true;
-      console.log(req.body);
-      let one = await Author.create(req.body);
+      let create = await Author.create(req.body);
       res.status(201).json({
         success: true,
-        response: one,
+        response: create,
       });
     } catch (error) {
       next(error);

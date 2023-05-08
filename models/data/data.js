@@ -40,7 +40,6 @@ let newMangas = async (mangas) => {
     company ? (manga.company_id = company._id) : null;
     let newManga = await Manga.create(manga);
     for (let chapter of manga.chapters) {
-      console.log(chapter);
       chapter.manga_id = newManga._id;
       chapter.cover_photo = chapter.pages[0];
       await Chapter.create(chapter);

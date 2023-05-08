@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const schema = new mongoose.Schema(
   {
-    mail: { type: String, required : true },
+    email: { type: String, required : true },
     password: { type: String, required : true },
     photo: { type: String, required : true },
     role : { type : Number, required : true},
@@ -13,4 +13,4 @@ const schema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export const User = mongoose.model(schema, "users");
+export const User = mongoose.model( "users" ,schema);

@@ -14,4 +14,4 @@ const schema = new mongoose.Schema(
   }
 );
 
-export const Author = mongoose.model(schema, "companies");
+export const Company = mongoose.model("companies", schema);

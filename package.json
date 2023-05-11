@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
-    "data" : " node ./models/data/data.js"
+    "data": " node ./models/data/data.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -15,6 +15,8 @@
     "ejs": "~2.6.1",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
+    "joi": "^17.9.2",
+    "joi-objectid": "^4.0.2",
     "mongoose": "^7.1.0",
     "morgan": "~1.9.1",
     "passport": "^0.6.0",

@@ -1,16 +1,17 @@
 import { Manga } from "../models/Manga.js";
+import defaultResponse from "../config/response.js";
 
 const mangas = {
   read: async (req, res, next) => {
     try {
-      let all = await Manga.find();
-      res.status(201).json({
-        success: true,
-        response: all,
-      });
+      let mangas = await Manga.find();
+      req.body.success = true;
+      req.body.sc = 201;
+      req.body.data = { mangas };
+      return defaultResponse(req, res);
     } catch (error) {
       next(error);
     }
   },
 };
-export default mangas
+export default mangas;

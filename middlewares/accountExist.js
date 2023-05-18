@@ -1,8 +1,8 @@
-import { User } from "../models/User.js";
+import { User } from "../models/User.js ";
 import defaultResponse from "../config/response.js";
 
 const accountExist = {
-  Existsignin: async (req, res, next) => {
+  existSignin: async (req, res, next) => {
     const user = await User.findOne({ email: req.body.email });
     if (user) {
       req.user = {
@@ -21,7 +21,7 @@ const accountExist = {
     req.body.data = "user does not exist!";
     return defaultResponse(req, res);
   },
-  Existsignup: async (req, res, next) => {
+  existSignup: async (req, res, next) => {
     const user = await User.findOne({ email: req.body.email });
     if (user) {
       req.body.success = false;

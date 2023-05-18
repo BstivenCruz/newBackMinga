@@ -2,7 +2,7 @@ import { Author } from "../models/Author.js";
 import { Company } from "../models/Company.js";
 import defaultResponse from "../config/response.js";
 
-async function finds_id(req, res, next) {
+async function findsId(req, res, next) {
   const author = await Author.findOne({ user_id: req.user_id });
   if (!author) {
     req.body.success = false;
@@ -22,3 +22,5 @@ async function finds_id(req, res, next) {
   req.body.company_id = company._id;
   next();
 }
+
+export default findsId

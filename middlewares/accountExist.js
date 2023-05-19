@@ -13,7 +13,6 @@ const accountExist = {
         role: user.role,
         is_verified: user.is_verified,
       };
-
       return next();
     }
     req.body.success = false;

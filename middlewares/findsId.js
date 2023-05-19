@@ -15,7 +15,7 @@ async function findsId(req, res, next) {
   } else {
     req.body.success = false;
     req.body.sc = 400;
-    req.body.data = "not exist!";
+    req.body.data = "not author not company!";
     return defaultResponse(req, res);
   }
 }

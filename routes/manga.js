@@ -10,5 +10,6 @@ const router = express.Router();
 router.get("/", read);
 router.use("/categories", category);
 router.use("/chapters", chapter);
+router.get('/authors/:idAuthor')
 
 export default router;

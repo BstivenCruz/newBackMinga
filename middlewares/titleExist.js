@@ -6,8 +6,9 @@ async function titleExist(req, res, next) {
   if (manga) {
     req.body.success = false;
     req.body.sc = 400;
-    req.body.data = "manga does not exist!";
+    req.body.data = "manga exist!";
     return defaultResponse(req, res);
   }
   return next();
 }
+export default titleExist

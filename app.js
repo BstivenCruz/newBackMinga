@@ -8,7 +8,8 @@ import logger from "morgan";
 
 import indexRouter from "./routes/index.js";
 import { __dirname } from "./utils.js";
-
+import { errorHandler } from './middlewares/errorHandler.js'
+import { notFoundHandler } from './middlewares/notFoundHandler.js'
 const app = express();
 
 // view engine setup

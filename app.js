@@ -7,8 +7,8 @@ import logger from "morgan";
 
 import indexRouter from "./routes/index.js";
 import { __dirname } from "./utils.js";
-import { errorHandler } from './middlewares/errorHandler.js'
-import { notFoundHandler } from './middlewares/notFoundHandler.js'
+import { errorHandler } from "./middlewares/errorHandler.js";
+import { notFoundHandler } from "./middlewares/notFoundHandler.js";
 const app = express();
 
 // view engine setup
@@ -20,8 +20,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
-app.use(notFoundHandler)
-app.use(errorHandler)
+app.use("/api", indexRouter);
+app.use(notFoundHandler);
+app.use(errorHandler);
 
 app.use("/", indexRouter);
 

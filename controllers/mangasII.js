@@ -4,7 +4,6 @@ const get = {
   getOne: async (req, res, next) => {
     try {
       const { id } = req.params;
-      console.log(id);
       const manga = await Manga.findById(id, "-_id -createdAt -updatedAt -__v")
         .populate("author_id", "-_id -createdAt -updatedAt -__v")
         .populate("company_id", "-_id -createdAt -updatedAt -__v")

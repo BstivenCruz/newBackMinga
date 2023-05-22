@@ -9,10 +9,10 @@ const { getForAuthor, getOne } = get;
 const router = express.Router();
 
 /* GET users listing. */
+router.use("/chapters", chapter);
+router.use("/categories", category);
 router.get("/", read);
 router.get("/:id", getOne);
-router.use("/categories", category);
-router.use("/chapters", chapter);
 router.get("/authors/:idAuthor", getForAuthor);
 
 export default router;

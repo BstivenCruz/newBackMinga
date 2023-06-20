@@ -15,5 +15,4 @@ router.use("/authors", authorRouter);
 router.use("/companies", companyRouter);
 router.use("/mangas", mangaRouter);
 
-
 export default router;

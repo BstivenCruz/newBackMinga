@@ -44,6 +44,28 @@ const get = {
       next(error);
     }
   },
+
+  getMe: async (req, res, next) => {
+    try {
+      const manga = await Manga.find({ author_id: req.body.author_id });
+      /*     .populate("author_id", "name -_id")
+        .populate("company_id", "name")
+        .populate("category_id"); */
+      console.log(manga);
+      if (manga) {
+        req.body.success = true;
+        req.body.sc = 201;
+        req.body.data = manga;
+        return defaultResponse(req, res);
+      }
+      req.body.success = false;
+      req.body.sc = 400;
+      req.body.data = "manga not found ";
+      return defaultResponse(req, res);
+    } catch (error) {
+      next(error);
+    }
+  },
 };
 
 export default get;

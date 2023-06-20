@@ -1,10 +1,12 @@
 import express from "express";
 import category from "./category.js";
 import chapter from "./chapter.js";
+import findsId from "../middlewares/findsId.js";
 import mangas from "../controllers/mangas.js";
 const { read } = mangas;
 import get from "../controllers/mangasII.js";
-const { getForAuthor, getOne } = get;
+const { getForAuthor, getOne, getMe } = get;
+import passport from "../config/passport.js";
 
 const router = express.Router();
 

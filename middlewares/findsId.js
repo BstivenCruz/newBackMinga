@@ -4,8 +4,8 @@ import defaultResponse from "../config/response.js";
 
 async function findsId(req, res, next) {
   const author = await Author.findOne({ user_id: req.user_id });
+  console.log(author);
   const company = await Company.findOne({ user_id: req.user_id });
-
   if (author) {
     req.body.author_id = author._id;
     return next();
